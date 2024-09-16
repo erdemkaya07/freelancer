@@ -1,48 +1,72 @@
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-  &__logo {
-    width: 60px;
-    height: 60px;
+#home {
+  &_a {
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    i {
+      color: $primary-color;
+      padding-bottom: 0.5rem;
+    }
   }
-  &__items {
-    display: flex;
-    li {
-      padding: 1rem 1.5rem;
-      a {
-        text-decoration: none;
-        color: #fff;
-        text-transform: uppercase;
-        border-bottom: 3px transparent solid;
-        padding-bottom: .5rem;
-        transform: border-color .5s;
-        &:hover {
-          border-color: $medium-color;
+  &_b {
+    .profile {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      li {
+        &.title {
+          font-size: 1.5rem;
         }
-        &.active {
-          border-color: $primary-color;
+        &.number {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+      div {
+        padding: 3rem 0;
+        &:nth-child(odd) {
+          background-color: $light-color;
+        }
+        &:nth-child(even) {
+          background-color: $medium-color;
         }
       }
     }
   }
-}
-
-#header {
-  &__home {
-    background:$bg-image no-repeat center right/cover;
-    height: 100vh;
-    color: #fff;
-    .header-content {
+  &_c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       text-align: center;
-      padding-top: 20%;
-    }
-    h1 {
-      font-size: 4rem;
-      line-height: 1.2;
-    }
-    .typewrite {
-      display: block;
+      &__step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 25px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+      &__icon {
+        position: relative;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        background: $dark-color;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+        &:hover {
+          background: $primary-color;
+          .process__step {
+            background-color: $dark-color;
+          }
+        }
+      }
     }
   }
 }
